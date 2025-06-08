@@ -125,10 +125,6 @@ main * {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
- 
-
-
-
 .item_5,
 .item_6,
 .item_7,
@@ -145,7 +141,11 @@ main * {
 .item-10_header,
 .item-12_header,
 .item-13_header,
-.item-14_header {
+.item-14_header,
+.item-15_header,
+.item-17_header,
+.item-18_header, 
+.item-19_header {
   display: flex;
   justify-content: space-between;
   margin: 0 40px;
@@ -198,6 +198,76 @@ main * {
   display: grid;
   grid-template-columns: auto auto;
 }
+
+.item_15 {
+  grid-template-rows: auto 1fr;
+}
+
+.brands{ 
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+}
+
+.item_16{
+  margin: 0 140px;
+}
+
+.item_17{
+  grid-template-rows: auto 1fr;
+}
+
+.item_17_body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.item_17__card{
+  display: flex;
+}
+
+.item_18{
+  grid-template-rows: auto 1fr;
+}
+
+.offer-payment{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.offer-payment__methods{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.credit_cards{
+  display: flex;
+}
+
+
+.offer-payment__credit{
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+}
+.offer_payment__body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.offer_payment__card{
+  display: flex;
+}
+
+.item_19{
+  grid-template-rows: auto auto;
+}
+
+.item_20{
+  display: flex;
+}
+
 
 
 
