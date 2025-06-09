@@ -1,7 +1,10 @@
 :root {
-  --nav-background-color: #004797;
+  --blue-background-color: #004797;
   --secondary-color: #eb5b25;
   --principal-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --second-nav--background-color: #fff;
+  --main-background-color: #f1f1f1f5;
+  --footer-background-color: black;
 }
 
 * {
@@ -17,27 +20,36 @@ ul {
   justify-content: space-between;
 }
 
-li {
+a {
   text-decoration: none;
+}
+
+header li,
+nav li {
+  font-size: 12px;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: auto auto 4000px;
-}
-
-.grid-container * {
-  border: 1px solid;
+  grid-template-rows: auto auto auto;
 }
 
 header {
   grid-column: 1/3;
   display: grid;
   grid-template-columns: 2fr 4fr;
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 0.4rem solid var(--secondary-color);
+  background-color: var(--blue-background-color);
+}
 
-  background-color: var(--nav-background-color);
+.logo {
+  display: flex;
+  justify-self: center;
+}
+
+.alkosto-logo {
+  width: 90%;
 }
 
 .nav-top {
@@ -46,20 +58,21 @@ header {
   font-size: 14px;
 }
 
-.nav-top__ul {
-  gap: 30px;
+.nav-top__bar {
+  margin: 0.8em 3rem;
 }
 
-.nav-top__li,
-.principal-nav__li {
+.nav-top__li {
   color: azure;
+  padding-right: 3rem;
+  font-size: 12px;
 }
 
 .search-logo {
   background-color: white;
-  margin-left: 10px;
   border: 1px solid black;
   border-radius: 2px;
+  padding: 0 1em;
 }
 
 .search-logo input {
@@ -67,54 +80,104 @@ header {
   border-radius: 2px;
 }
 
-nav {
-  grid-column: 1/3;
-  background-color: blue;
+.search-bar {
+  width: 25rem;
+  height: 2rem;
 }
 
-.principal-nav__ul {
-  justify-content: space-between;
-  list-style: none;
+nav {
+  grid-column: 1/3;
+  color: var(--blue-background-color);
+}
+
+.principal-nav {
+  background-color: var(--second-nav--background-color);
+  padding: 0.5rem 6rem;
+}
+
+.sep-nav {
+  border-right: 0.2px solid black;
 }
 
 main {
+  background-color: var(--main-background-color);
   grid-column: 1/3;
-  grid-row: auto;
-  display: grid;
-  background-color: blueviolet;
-  margin: 20px 140px;
-}
-
-main * {
-  border: 2px solid black;
+  padding: 0.5rem 6rem;
 }
 
 .main_items {
   display: grid;
+  row-gap: 1rem;
+  font-size: 13px;
 }
 
 .item {
   display: grid;
+  row-gap: 5px;
+}
+
+.item a {
+  color: var(--secondary-color);
 }
 
 .item_1 {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1rem;
 }
 
-.item__category-img {
+.item__category-images {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
 }
 
-.item__category-img {
-  border: 2px solid black;
+.main__img {
+  display: grid;
+  justify-self: center;
+  width: 100%;
+  border-radius: 5px;
 }
 
-.item_2 {
+.item_category__img {
+  background-color: var(--second-nav--background-color);
+  border-radius: 5px;
+}
+
+.item_category__img img {
+  display: grid;
+  justify-self: center;
+  width: 50%;
+  padding: 0.3rem;
+}
+
+.item__category__p {
+  font-size: 10px;
+  text-align: center;
+}
+
+.item_2__img,
+.item_9__img {
+  width: 100%;
 }
 
 .item_3 {
-  padding: 0 60px;
+  padding: 0 6rem;
+}
+
+.item_3__li {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 1rem;
+}
+
+.item_3_img {
+  width: 25px;
+}
+
+.item_3_benefits__ul {
+  background-color: var(--second-nav--background-color);
+  color: var(--blue-background-color);
 }
 
 .sep-benefits {
@@ -123,6 +186,11 @@ main * {
 
 .item_4 {
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.item_4__img_group {
+  border-radius: 5px;
 }
 
 .item_5,
@@ -144,11 +212,11 @@ main * {
 .item-14_header,
 .item-15_header,
 .item-17_header,
-.item-18_header, 
+.item-18_header,
 .item-19_header {
   display: flex;
   justify-content: space-between;
-  margin: 0 40px;
+  color: var(--blue-background-color);
 }
 
 .phones,
@@ -160,15 +228,12 @@ main * {
 .tires {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  border-radius: 5px;
+  gap: 1rem;
 }
 
 .item_8 {
   grid-template-columns: 1fr 1fr;
-}
-
-.household__offer-group {
-  display: grid;
-  grid-template-rows: auto 1fr;
 }
 
 .household-offer__header {
@@ -176,45 +241,122 @@ main * {
 }
 
 .household-offer,
-.household__offer-items {
+.household__offer-item-group {
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 10px;
+  place-items: center;
 }
 
-.item_9 {
+.household-offer__item {
+  place-items: center;
+  margin-top: 2rem;
+  padding: 0.8rem;
+  background-color: var(--second-nav--background-color);
+  border-radius: 5px;
 }
 
-.item_11 {
-  grid-template-columns: 1fr 2fr;
+.item11_title {
+  text-align: center;
+  color: var(--blue-background-color);
+}
+
+.kombo-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.kombo-items {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.kombo__img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.card {
+  box-shadow: 2px 2px 2px 2px rgba(0.2, 0.2, 0.2, 0.2);
+  border-radius: 5px;
+  background-color: var(--second-nav--background-color);
+  padding: 1rem;
+}
+
+.card_header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-star{
+  color: #ecba18;;
+}
+
+.fa-plus {
+  position: absolute;
+  color: var(--secondary-color);
+  border-radius: 3px;
+  background-color: var(--second-nav--background-color);
+  box-shadow: 2px 2px 2px 2px rgba(0.2, 0.2, 0.2, 0.2);
+  padding: 4px;
 }
 
 .price-before {
   text-decoration: line-through;
 }
 
-.kombo-items{
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
 .item_15 {
   grid-template-rows: auto 1fr;
 }
 
-.brands{ 
+.brands {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   gap: 10px;
 }
 
-.item_16{
-  margin: 0 140px;
+.brand {
+  display: flex;
+  justify-content: center;
 }
 
-.item_17{
-  grid-template-rows: auto 1fr;
+.brand__img {
+  width: 110px;
+  height: 45px;
+  border-radius: 1px;
+}
+
+.item_16 {
+  display: flex;
+  justify-content: center;
+}
+
+.market__img {
+  width: 9rem;
+}
+
+.market-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 2rem 0;
+  background: linear-gradient(90deg, #013e99 0, #5d9cfa 50%, #013e99 100%);
+  color: var(--second-nav--background-color);
+}
+
+.catalog_button {
+  margin: 1rem;
+  padding: 1em 5em;
+  font-weight: bold;
+  border-color: var(--secondary-color);
+  border-radius: 5px;
+  color: var(--secondary-color);
+}
+
+.item_17 {
+  grid-template-rows: auto auto;
 }
 
 .item_17_body {
@@ -223,51 +365,115 @@ main * {
   gap: 20px;
 }
 
-.item_17__card{
+.item_17__card {
   display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0.2, 0.2, 0.2, 0.2);
 }
 
-.item_18{
+.item_17__img {
+  margin-left: 2em;
+}
+
+.item_17_card_body,
+.item_17_arrow {
+  padding-top: 1rem;
+}
+
+.orange_p {
+  color: var(--secondary-color);
+}
+
+.blue_p {
+  color: var(--blue-background-color);
+  font-size: 14px;
+}
+
+.item_17_arrow {
+  color: var(--secondary-color);
+  padding-right: 1rem;
+}
+
+.item_18 {
   grid-template-rows: auto 1fr;
 }
 
-.offer-payment{
+.offer-payment {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.offer-payment__methods{
+.offer-payment__methods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.credit_cards{
+.credit_cards {
   display: flex;
 }
 
-
-.offer-payment__credit{
+.offer-payment__credit {
   display: grid;
   grid-template-rows: auto 1fr;
-
 }
-.offer_payment__body{
+.offer_payment__body {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.offer_payment__card{
+.offer_payment__card {
   display: flex;
 }
 
-.item_19{
+.item_19 {
   grid-template-rows: auto auto;
 }
 
-.item_20{
+.payment-brand__img {
+  width: 90%;
+}
+
+.item_20 {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  padding: 0 8rem;
+  gap: 2rem;
+}
+
+.fa-regular .fa-circle-check {
+  color: var(--blue-background-color);
+}
+
+.alkosto-benefits {
   display: flex;
 }
 
+footer {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 1rem 18rem;
+  background-color: var(--footer-background-color);
+  color: var(--main-background-color);
+  font-size: 14px;
+}
 
+.about-alkosto {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  padding: 4rem 4rem;
+}
 
+.terms {
+  padding: 2rem 0;
+}
 
+.footer_menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
